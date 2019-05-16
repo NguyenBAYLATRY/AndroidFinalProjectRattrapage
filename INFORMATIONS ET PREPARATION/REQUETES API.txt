@@ -1,0 +1,19 @@
+Get Movies genres:
+https://api.themoviedb.org/3/genre/movie/list?api_key=8e894528fa9c319948a48ce050f28657&language=fr
+
+Get Movies list:
+https://api.themoviedb.org/3/search/movie?api_key=8e894528fa9c319948a48ce050f28657&language=fr&page=1&include_adult=false&query=ezdfezf
+https://api.themoviedb.org/3/search/multi?api_key=8e894528fa9c319948a48ce050f28657&language=fr&page=1&include_adult=false&query=ezdfezf
+
+Get Image:
+https://image.tmdb.org/t/p/w500/1s7NBHgWJXYtMOZmRJAIrxPReZZ.jpg
+
+Get Movie details
+https://api.themoviedb.org/3/movie/381374?api_key=8e894528fa9c319948a48ce050f28657&language=fr
+
+Get trends:
+During the day:
+https://api.themoviedb.org/3/trending/movie/day?api_key=8e894528fa9c319948a48ce050f28657
+During the week:
+https://api.themoviedb.org/3/trending/movie/day?api_key=8e894528fa9c319948a48ce050f28657
+

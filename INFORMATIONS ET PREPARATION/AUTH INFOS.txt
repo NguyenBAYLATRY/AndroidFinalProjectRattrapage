@@ -1,0 +1,16 @@
+Movie Database
+
+AUTH:
+login: stephanebcd
+passwd: projetfinalesilv
+
+API:
+
+API Key (v3 auth)
+8e894528fa9c319948a48ce050f28657
+
+API Read Access Token (v4 auth)
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4ZTg5NDUyOGZhOWMzMTk5NDhhNDhjZTA1MGYyODY1NyIsInN1YiI6IjVjOTIzMzFlYzNhMzY4NjEwNzUzMTg5MiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.mhTgUT8jPFC4hj2Hf93X7_quvXTBKEKRZJ6JIjQMbzA
+
+Example API Request
+https://api.themoviedb.org/3/movie/550?api_key=8e894528fa9c319948a48ce050f28657
