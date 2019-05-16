@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private Button search_movies_button;
     private Button last_visited_button;
     private Button trend_movies_button;
+    private Button search_tv_button;
 
     // Runtime parameters
     private String actual_api_key = "";
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         search_movies_button = findViewById(R.id.search_movies_button);
         last_visited_button = findViewById(R.id.last_visited_button);
         trend_movies_button = findViewById(R.id.trend_movies_button);
+        search_tv_button = findViewById(R.id.search_tv_button);
 
         // Initialising display data
 
@@ -51,16 +53,27 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
             }
-
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 actual_api_key = s.toString();
             }
-
             @Override
             public void afterTextChanged(Editable s) {
             }
         });
+
+        // - Search TV Shows button
+        search_tv_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getBaseContext(), SearchTVActivity.class);
+                intent.putExtra("default_api_key", api_key);
+                intent.putExtra("typed_api_key", actual_api_key);
+                startActivity(intent);
+            }
+        });
+
+
         /*
 
             TO COMPLETE LATER
