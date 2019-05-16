@@ -1,3 +1,12 @@
+__________________________
+New:
+__________________________
+
+
+__________________________
+Old:
+__________________________
+
 Get Movies genres:
 https://api.themoviedb.org/3/genre/movie/list?api_key=8e894528fa9c319948a48ce050f28657&language=fr
 
