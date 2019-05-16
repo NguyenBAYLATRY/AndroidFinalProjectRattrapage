@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.boucaud.stephane.androidrattrapage.Controllers.Controller;
 import com.boucaud.stephane.androidrattrapage.Models.GenresList;
 import com.boucaud.stephane.androidrattrapage.Models.TVShow;
 import com.boucaud.stephane.androidrattrapage.R;
@@ -36,11 +37,9 @@ public class SearchTVActivity extends AppCompatActivity {
     // View Objects
     private Spinner spinner_genres;
     private EditText SearchQuery;
-    private RecyclerView moviesListRecyclerView;
+    private RecyclerView listRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
-
-    private TextView textview_test;
 
     // Runtime parameters
     private String intent_typed_api_key;
@@ -50,7 +49,7 @@ public class SearchTVActivity extends AppCompatActivity {
     private String Selected_genre;
     private int Selected_genre_id;
     private int actual_page = 1;
-    private List<TVShow> actual_movies = new ArrayList<TVShow>();
+    private List<TVShow> actual_tv_shows = new ArrayList<TVShow>();
 
 
     /***
@@ -80,16 +79,16 @@ public class SearchTVActivity extends AppCompatActivity {
                     MoviesList moviesList = response.body();
                     if (Selected_genre != "None" && Selected_genre != "Select Genre"){
                         //textview_test.setText(moviesList.getMovies(Selected_genre_id).toString());
-                        actual_movies = moviesList.getMovies(Selected_genre_id);
+                        actual_tv_shows = moviesList.getMovies(Selected_genre_id);
                     }
                     else{
                         //textview_test.setText(moviesList.getMovies().toString());
-                        actual_movies = moviesList.getMovies();
+                        actual_tv_shows = moviesList.getMovies();
                     }
 
                     // specify an adapter (see also next example)
-                    mAdapter = new SearchMoviesAdapter(actual_movies, api_key);
-                    moviesListRecyclerView.setAdapter(mAdapter);
+                    mAdapter = new SearchMoviesAdapter(actual_tv_shows, api_key);
+                    listRecyclerView.setAdapter(mAdapter);
 
                 } else {
                     System.out.println(response.errorBody());
@@ -105,7 +104,7 @@ public class SearchTVActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search);
+        setContentView(R.layout.activity_search_tv);
 
         // Get Intent data
         intent_default_api_key = getIntent().getStringExtra("default_api_key");
@@ -119,9 +118,8 @@ public class SearchTVActivity extends AppCompatActivity {
 
         // Getting all objects from View
         spinner_genres = (Spinner) findViewById(R.id.spinner_genres);
-        textview_test = (TextView) findViewById(R.id.test);
         SearchQuery = findViewById(R.id.SearchQuery);
-        moviesListRecyclerView = (RecyclerView) findViewById(R.id.moviesList);
+        listRecyclerView = (RecyclerView) findViewById(R.id.tv_shows_list);
 
         // Initialising display data
 
@@ -145,10 +143,10 @@ public class SearchTVActivity extends AppCompatActivity {
         // - Recycler View for search result
         // use this setting to improve performance if you know that changes
         // in content do not change the layout size of the RecyclerView
-        moviesListRecyclerView.setHasFixedSize(true);
+        listRecyclerView.setHasFixedSize(true);
         // use a linear layout manager
         layoutManager = new LinearLayoutManager(this);
-        moviesListRecyclerView.setLayoutManager(layoutManager);
+        listRecyclerView.setLayoutManager(layoutManager);
 
 
         // Listeners
