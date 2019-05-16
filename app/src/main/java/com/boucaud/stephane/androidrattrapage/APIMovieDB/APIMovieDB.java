@@ -16,7 +16,10 @@ The return value wraps the response in a Call object with the type of the expect
 public interface APIMovieDB {
 
     @GET("genre/movie/list")
-    Call<GenresList> getGenres(@Query("api_key") String api_key, @Query("language") String language);
+    Call<GenresList> getVideoGenres(@Query("api_key") String api_key, @Query("language") String language);
+
+    @GET("genre/tv/list")
+    Call<GenresList> getTVGenres(@Query("api_key") String api_key, @Query("language") String language);
 
     @GET("search/tv")
     Call<TVShowsList> searchTVShows(

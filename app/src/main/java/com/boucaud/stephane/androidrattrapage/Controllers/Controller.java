@@ -40,8 +40,13 @@ public class Controller implements ControllerInterface{
         this.LANG = LANG;
     }
 
-    public void queryGetGenres(Callback actions){
-        Call<GenresList> call = this.API.getGenres(this.API_KEY, this.LANG);
+    public void queryGetVideoGenres(Callback actions){
+        Call<GenresList> call = this.API.getVideoGenres(this.API_KEY, this.LANG);
+        call.enqueue(actions);
+    }
+
+    public void queryGetTVGenres(Callback actions){
+        Call<GenresList> call = this.API.getTVGenres(this.API_KEY, this.LANG);
         call.enqueue(actions);
     }
 

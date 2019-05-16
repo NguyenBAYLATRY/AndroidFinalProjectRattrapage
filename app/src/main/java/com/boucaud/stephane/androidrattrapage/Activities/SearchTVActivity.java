@@ -128,7 +128,7 @@ public class SearchTVActivity extends AppCompatActivity {
         controller = new Controller(api_key, language);
 
         // - Genres initiation
-        controller.queryGetGenres(new Callback<GenresList>(){
+        controller.queryGetTVGenres(new Callback<GenresList>(){
             public void onResponse(Call<GenresList> call, Response<GenresList> response) {
                 if(response.isSuccessful()) {
                     genresList = response.body();
