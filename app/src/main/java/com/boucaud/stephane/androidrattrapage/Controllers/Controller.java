@@ -1,12 +1,10 @@
 package com.boucaud.stephane.androidrattrapage.Controllers;
 
+import com.boucaud.stephane.androidrattrapage.APIMovieDB.APIMovieDB;
+import com.boucaud.stephane.androidrattrapage.Models.GenresList;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import boucaud.stephane.androidfinalproject.APIMovieDB.APIMovieDB;
-import boucaud.stephane.androidfinalproject.Models.GenresList;
-import boucaud.stephane.androidfinalproject.Models.MovieDetails;
-import boucaud.stephane.androidfinalproject.Models.MoviesList;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Retrofit;
@@ -41,11 +39,13 @@ public class Controller implements ControllerInterface{
         this.LANG = LANG;
     }
 
-
     public void queryGetGenres(Callback actions){
         Call<GenresList> call = this.API.getGenres(this.API_KEY, this.LANG);
         call.enqueue(actions);
     }
+
+    /*
+        TO COMPLETE LATER
 
     public void querySearchMovies(int page, boolean include_adult, String query, Callback actions){
         Call<MoviesList> call = this.API.searchMovies(this.API_KEY, this.LANG, page, include_adult, query);
@@ -62,6 +62,7 @@ public class Controller implements ControllerInterface{
         call.enqueue(actions);
     }
 
+    */
 
 
     public String getAPI_KEY() {

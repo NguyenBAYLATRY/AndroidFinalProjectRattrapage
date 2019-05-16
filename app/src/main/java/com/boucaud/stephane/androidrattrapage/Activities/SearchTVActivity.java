@@ -16,6 +16,7 @@ import android.widget.TextView;
 import com.boucaud.stephane.androidrattrapage.Controllers.Controller;
 import com.boucaud.stephane.androidrattrapage.Models.GenresList;
 import com.boucaud.stephane.androidrattrapage.Models.TVShow;
+import com.boucaud.stephane.androidrattrapage.Models.TVShowsList;
 import com.boucaud.stephane.androidrattrapage.R;
 
 import java.util.ArrayList;
@@ -72,23 +73,23 @@ public class SearchTVActivity extends AppCompatActivity {
      * @param include_adult
      * @param query
      */
-    private void searchMovies (int page, boolean include_adult, String query) {
-        controller.querySearchMovies(page, include_adult, query, new Callback<MoviesList>() {
-            public void onResponse(Call<MoviesList> call, Response<MoviesList> response) {
+    private void searchTVShows (int page, boolean include_adult, String query) {
+        controller.querySearchMovies(page, include_adult, query, new Callback<TVShowsList>() {
+            public void onResponse(Call<TVShowsList> call, Response<TVShowsList> response) {
                 if (response.isSuccessful()) {
-                    MoviesList moviesList = response.body();
+                    TVShowsList TVShowsList = response.body();
                     if (Selected_genre != "None" && Selected_genre != "Select Genre"){
                         //textview_test.setText(moviesList.getMovies(Selected_genre_id).toString());
-                        actual_tv_shows = moviesList.getMovies(Selected_genre_id);
+                        actual_tv_shows = TVShowsList.getTVShows(Selected_genre_id);
                     }
                     else{
                         //textview_test.setText(moviesList.getMovies().toString());
-                        actual_tv_shows = moviesList.getMovies();
+                        actual_tv_shows = TVShowsList.getTVShows();
                     }
 
                     // specify an adapter (see also next example)
-                    mAdapter = new SearchMoviesAdapter(actual_tv_shows, api_key);
-                    listRecyclerView.setAdapter(mAdapter);
+                    /*mAdapter = new SearchMoviesAdapter(actual_tv_shows, api_key);
+                    listRecyclerView.setAdapter(mAdapter);*/
 
                 } else {
                     System.out.println(response.errorBody());
@@ -156,7 +157,7 @@ public class SearchTVActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Selected_genre = (String) parent.getItemAtPosition(position);
                 Selected_genre_id = genresList.searchGenreID(Selected_genre);
-                searchMovies (actual_page, false, SearchQuery.getText().toString());
+                searchTVShows (actual_page, false, SearchQuery.getText().toString());
             }
             public void onNothingSelected(AdapterView<?> parent) {
             }
@@ -172,9 +173,9 @@ public class SearchTVActivity extends AppCompatActivity {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 actual_page = 1;
                 if (s.length() >= 0) {
-                    searchMovies (actual_page, false, s.toString());
+                    searchTVShows (actual_page, false, s.toString());
                 } else {
-                    searchMovies (actual_page, false, "");
+                    searchTVShows (actual_page, false, "");
                 }
             }
 
