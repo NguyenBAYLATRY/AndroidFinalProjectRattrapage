@@ -18,6 +18,7 @@ import com.boucaud.stephane.androidrattrapage.Models.GenresList;
 import com.boucaud.stephane.androidrattrapage.Models.TVShow;
 import com.boucaud.stephane.androidrattrapage.Models.TVShowsList;
 import com.boucaud.stephane.androidrattrapage.R;
+import com.boucaud.stephane.androidrattrapage.RecyclerViewsClasses.SearchTVAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -88,8 +89,8 @@ public class SearchTVActivity extends AppCompatActivity {
                     }
 
                     // specify an adapter (see also next example)
-                    /*mAdapter = new SearchMoviesAdapter(actual_tv_shows, api_key);
-                    listRecyclerView.setAdapter(mAdapter);*/
+                    mAdapter = new SearchTVAdapter(actual_tv_shows, api_key);
+                    listRecyclerView.setAdapter(mAdapter);
 
                 } else {
                     System.out.println(response.errorBody());
