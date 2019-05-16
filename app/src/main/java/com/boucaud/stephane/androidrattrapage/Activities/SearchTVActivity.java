@@ -74,7 +74,7 @@ public class SearchTVActivity extends AppCompatActivity {
      * @param query
      */
     private void searchTVShows (int page, boolean include_adult, String query) {
-        controller.querySearchMovies(page, include_adult, query, new Callback<TVShowsList>() {
+        controller.querySearchTVShows(page, include_adult, query, new Callback<TVShowsList>() {
             public void onResponse(Call<TVShowsList> call, Response<TVShowsList> response) {
                 if (response.isSuccessful()) {
                     TVShowsList TVShowsList = response.body();

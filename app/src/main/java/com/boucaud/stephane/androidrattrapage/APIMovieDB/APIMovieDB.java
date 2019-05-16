@@ -1,6 +1,7 @@
 package com.boucaud.stephane.androidrattrapage.APIMovieDB;
 
 import com.boucaud.stephane.androidrattrapage.Models.GenresList;
+import com.boucaud.stephane.androidrattrapage.Models.TVShowsList;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -16,6 +17,15 @@ public interface APIMovieDB {
 
     @GET("genre/movie/list")
     Call<GenresList> getGenres(@Query("api_key") String api_key, @Query("language") String language);
+
+    @GET("search/tv")
+    Call<TVShowsList> searchTVShows(
+            @Query("api_key") String api_key,
+            @Query("language") String language,
+            @Query("page") int page,
+            @Query("include_adult") boolean include_adult,
+            @Query("query") String query
+    );
 
     /*
         TO COMPLETE LATER
