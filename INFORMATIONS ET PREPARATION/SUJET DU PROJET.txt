@@ -1,6 +1,7 @@
 Global Documentation:
 https://developers.themoviedb.org/3/getting-started/introduction
 
+Description:
 Develop an app that will use the Movie Database API to search for TV Shows.
 You will display the results of a query in a RecyclerView.
 In a cell, some basic information will be displayed, such as the name of the TV
@@ -10,11 +11,16 @@ number of seasons, number of episodes, list of actors.
 When an actor is selected, a new page will be opened, with more details about
 the actor.
 
+Resume of the description:
+- Results of tv shows search in recycler view
+- on click on tv shows, show details in new activity
+- on click on actor, show details about actor in new activity
+
 Create a new Android Project.
-- Import necessary libraries, such as a Network library and a Parsing library.
-- Add mandatory permissions to your app from AndroidManifest.xml.
-- Read Documentation from the Movie Database API.
-- Create an account to get an API key.
+V Import necessary libraries, such as a Network library and a Parsing library.
+V Add mandatory permissions to your app from AndroidManifest.xml.
+V Read Documentation from the Movie Database API.
+V Create an account to get an API key.
 - Implement a test request. (don’t forget to add your API key).
 - Create models to parse your data.
 - Create a RecyclerView.

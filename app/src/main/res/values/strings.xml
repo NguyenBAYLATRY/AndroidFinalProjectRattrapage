@@ -1,3 +1,16 @@
 <resources>
-    <string name="app_name">AndroidFinalProjectRattrapage</string>
+    <string name="app_name">AndroidFinalProject</string>
+    <string name="Search_display">Enter you search query here</string>
+    <string name="Search_page_title">Select search options:</string>
+    <string name="Main_page_title">The movie DB</string>
+    <string name="API_key_typing">Enter API key (optionnal):</string>
+    <string name="last_visited_button">Search history</string>
+    <string name="search_button">Search movies</string>
+    <string name="Visited_page_title">Last visited movies:</string>
+    <string name="trend_movies_button">Trend movies</string>
+    <string name="Trends_page_title">Trend movies:</string>
+    <string name="main_page_movies_section_title">Movies section:</string>
+    <string name="main_page_tv_section_title">TV Shows section:</string>
+    <string name="search_tv_button">Search TV Shows</string>
+    <string name="main_page_other_funct_section_title">Other functionnalities:</string>
 </resources>
