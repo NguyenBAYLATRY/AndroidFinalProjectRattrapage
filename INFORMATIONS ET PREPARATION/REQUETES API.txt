@@ -4,6 +4,11 @@ __________________________
 Get TV Shows list:
 https://api.themoviedb.org/3/search/tv?api_key=8e894528fa9c319948a48ce050f28657&language=fr&page=1&include_adult=false&query=test
 
+Get TV Show details:
+https://api.themoviedb.org/3/tv/1769?api_key=8e894528fa9c319948a48ce050f28657&language=fr
+
+Get Creators details
+https://api.themoviedb.org/3/person/9813?api_key=8e894528fa9c319948a48ce050f28657&language=fr
 __________________________
 Old:
 __________________________
