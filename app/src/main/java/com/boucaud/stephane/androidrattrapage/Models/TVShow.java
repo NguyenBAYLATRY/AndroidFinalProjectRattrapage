@@ -43,6 +43,22 @@ public class TVShow {
 
     private String genresStringList;
 
+    public TVShow(TVShowDetails TVDetails){
+        this.original_name = TVDetails.getOriginal_name();
+        this.id = TVDetails.getId();
+        this.name = TVDetails.getName();
+        this.vote_count = TVDetails.getVote_count();
+        this.vote_average = TVDetails.getVote_average();
+        this.poster_path = TVDetails.getPoster_path();
+        this.first_air_date = TVDetails.getFirst_air_date();
+        this.popularity = TVDetails.getPopularity();
+        this.genre_ids = TVDetails.getGenresIds();
+        this.original_language = TVDetails.getOriginal_language();
+        this.backdrop_path = TVDetails.getBackdrop_path();
+        this.overview = TVDetails.getOverview();
+        this.genresStringList = TVDetails.getGenresStringList();
+    }
+
 
 
     public String getOriginal_name() {

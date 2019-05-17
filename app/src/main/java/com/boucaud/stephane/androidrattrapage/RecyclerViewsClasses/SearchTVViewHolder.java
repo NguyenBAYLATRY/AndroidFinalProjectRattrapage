@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.boucaud.stephane.androidrattrapage.Activities.TVDetailsActivity;
 import com.boucaud.stephane.androidrattrapage.Models.TVShow;
 import com.boucaud.stephane.androidrattrapage.R;
 import com.bumptech.glide.Glide;
@@ -25,7 +26,7 @@ public class SearchTVViewHolder extends RecyclerView.ViewHolder {
         this.thumbnail = itemView.findViewById(R.id.thumbnail);
     }
 
-    public void bind(final TVShow tv_show, String api_key) {
+    public void bind(final TVShow tv_show, final String api_key) {
         name.setText(tv_show.getName());
         String new_description = tv_show.getOverview();
         if (new_description.length() >= 100){
@@ -36,15 +37,15 @@ public class SearchTVViewHolder extends RecyclerView.ViewHolder {
         Glide.with(itemView).load(tv_show.getPosterFullPath()).into(thumbnail);
 
         // Create Listener for each ViewHolder, then if we click, we can see video details
-        /*itemView.setOnClickListener(new View.OnClickListener() {
+        itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Context context = v.getContext();
-                Intent intent = new Intent(context, MovieDetailsActivity.class);
-                intent.putExtra("movie_id", movie.getId());
+                Intent intent = new Intent(context, TVDetailsActivity.class);
+                intent.putExtra("tv_id", tv_show.getId());
                 intent.putExtra("api_key", api_key);
                 context.startActivity(intent);
             }
-        });*/
+        });
     }
 }
