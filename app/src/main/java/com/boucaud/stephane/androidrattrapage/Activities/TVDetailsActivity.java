@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -11,6 +13,7 @@ import com.boucaud.stephane.androidrattrapage.Controllers.Controller;
 import com.boucaud.stephane.androidrattrapage.Models.TVShow;
 import com.boucaud.stephane.androidrattrapage.Models.TVShowDetails;
 import com.boucaud.stephane.androidrattrapage.R;
+import com.boucaud.stephane.androidrattrapage.RecyclerViewsClasses.HorizontalCreatorsAdapter;
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 
@@ -39,6 +42,11 @@ public class TVDetailsActivity  extends AppCompatActivity {
     private TextView textview_production_companies;
 
     private ImageView thumbnail;
+
+    // Recycler View
+    private RecyclerView.LayoutManager layoutManager;
+    private RecyclerView ListRecyclerView;
+    private RecyclerView.Adapter mAdapter;
 
     // Runtime parameters
     private int tv_id;
@@ -83,6 +91,9 @@ public class TVDetailsActivity  extends AppCompatActivity {
                     textview_overview.setText("Overview:\n" + TVDetails.getOverview());
                     textview_genres.setText("Genres:\n" + TVDetails.getGenresStringList());
                     textview_production_companies.setText("Prod companies:\n" + TVDetails.getProductionCompaniesStringList());
+
+                    mAdapter = new HorizontalCreatorsAdapter(TVDetails.getCreated_by(), api_key);
+                    ListRecyclerView.setAdapter(mAdapter);
 
                     Glide.with(getApplicationContext()).load(TVDetails.getPosterFullPath()).into(thumbnail);
 
@@ -158,9 +169,15 @@ public class TVDetailsActivity  extends AppCompatActivity {
 
         thumbnail = findViewById(R.id.thumbnail);
 
+        ListRecyclerView = (RecyclerView) findViewById(R.id.creatorsList);
+
         // Load DATA
 
         controller = new Controller(api_key, language);
+
+        //Prepare recycler view for creators
+        layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        ListRecyclerView.setLayoutManager(layoutManager);
 
         load_tv_data();
 

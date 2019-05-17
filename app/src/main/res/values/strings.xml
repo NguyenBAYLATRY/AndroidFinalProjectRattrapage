@@ -13,4 +13,5 @@
     <string name="main_page_tv_section_title">TV Shows section:</string>
     <string name="search_tv_button">Search TV Shows</string>
     <string name="main_page_other_funct_section_title">Other functionnalities:</string>
+    <string name="title_creators">Creators / Actors:</string>
 </resources>

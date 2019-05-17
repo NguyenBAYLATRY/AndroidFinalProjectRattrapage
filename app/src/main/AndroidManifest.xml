@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activities.TVDetailsActivity"></activity>
+        <activity android:name=".Activities.CreatorDetailsActivity"></activity>
+        <activity android:name=".Activities.TVDetailsActivity" />
         <activity android:name=".Activities.SearchTVActivity" />
         <activity android:name=".Activities.MainActivity">
             <intent-filter>
