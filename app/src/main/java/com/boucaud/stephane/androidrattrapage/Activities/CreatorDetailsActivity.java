@@ -27,6 +27,13 @@ public class CreatorDetailsActivity extends AppCompatActivity {
 
     // View Objects
     private TextView textview_name;
+    private TextView textview_birthdate;
+    private TextView textview_place_of_birth;
+    private TextView textview_known_for_department;
+    private TextView textview_also_known_as;
+    private TextView textview_gender;
+    private TextView textview_biography;
+    private TextView textview_popularity;
 
     private ImageView thumbnail;
 
@@ -45,6 +52,13 @@ public class CreatorDetailsActivity extends AppCompatActivity {
                     Person person = response.body();
 
                     textview_name.setText(person.getName());
+                    textview_birthdate.setText(person.getBirthday());
+                    textview_place_of_birth.setText(person.getPlace_of_birth());
+                    textview_known_for_department.setText(person.getKnown_for_department());
+                    textview_also_known_as.setText(person.getAlso_known_as_String());
+                    textview_gender.setText(Integer.toString(person.getGender()));
+                    textview_biography.setText(person.getBiography());
+                    textview_popularity.setText(Float.toString(person.getPopularity()));
 
                     Glide.with(getApplicationContext()).load(person.getImageFullPath()).into(thumbnail);
 
@@ -74,6 +88,13 @@ public class CreatorDetailsActivity extends AppCompatActivity {
 
         // Load View Objects
         textview_name = findViewById(R.id.name);
+        textview_birthdate = findViewById(R.id.birthdate);
+        textview_place_of_birth = findViewById(R.id.place_of_birth);
+        textview_known_for_department = findViewById(R.id.known_for_department);
+        textview_also_known_as = findViewById(R.id.also_known_as);
+        textview_gender = findViewById(R.id.gender);
+        textview_biography = findViewById(R.id.biography);
+        textview_popularity = findViewById(R.id.popularity);
 
         thumbnail = findViewById(R.id.thumbnail);
 

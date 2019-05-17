@@ -107,4 +107,17 @@ public class Person {
     public String getImageFullPath(){
         return "https://image.tmdb.org/t/p/w500" + profile_path;
     }
+
+    public String getAlso_known_as_String(){
+        String res = "";
+        for (int i = 0; i < also_known_as.size(); i++){
+            if (res.length()>0){
+                res += ", " + also_known_as.get(i);
+            }
+            else{
+                res += also_known_as.get(i);
+            }
+        }
+        return res;
+    }
 }
