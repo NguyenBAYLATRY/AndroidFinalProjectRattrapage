@@ -28,6 +28,15 @@ public class TVDetailsActivity  extends AppCompatActivity {
 
     // View Objects
     private TextView textview_name;
+    private TextView textview_status;
+    private TextView textview_first_air_date;
+    private TextView textview_last_air_date;
+    private TextView textview_vote_average;
+    private TextView textview_vote_count;
+    private TextView textview_popularity;
+    private TextView textview_overview;
+    private TextView textview_genres;
+    private TextView textview_production_companies;
 
     private ImageView thumbnail;
 
@@ -65,6 +74,15 @@ public class TVDetailsActivity  extends AppCompatActivity {
                     TVShowDetails TVDetails = response.body();
 
                     textview_name.setText(TVDetails.getName());
+                    textview_status.setText("Status:\n" + TVDetails.getStatus());
+                    textview_first_air_date.setText("First Air date:\n" + TVDetails.getFirst_air_date());
+                    textview_last_air_date.setText("Last Air date:\n" + TVDetails.getLast_air_date());
+                    textview_vote_average.setText("Votes average:\n" + Float.toString(TVDetails.getVote_average()));
+                    textview_vote_count.setText("Votes count:\n" + Integer.toString(TVDetails.getVote_count()));
+                    textview_popularity.setText("Popularity:\n" + Float.toString(TVDetails.getVote_count()));
+                    textview_overview.setText("Overview:\n" + TVDetails.getOverview());
+                    textview_genres.setText("Genres:\n" + TVDetails.getGenresStringList());
+                    textview_production_companies.setText("Prod companies:\n" + TVDetails.getProductionCompaniesStringList());
 
                     Glide.with(getApplicationContext()).load(TVDetails.getPosterFullPath()).into(thumbnail);
 
@@ -128,6 +146,15 @@ public class TVDetailsActivity  extends AppCompatActivity {
         // Load View Objects
 
         textview_name = findViewById(R.id.name);
+        textview_status = findViewById(R.id.status);
+        textview_first_air_date = findViewById(R.id.first_air_date);
+        textview_last_air_date = findViewById(R.id.last_air_date);
+        textview_vote_average = findViewById(R.id.vote_average);
+        textview_vote_count = findViewById(R.id.vote_count);
+        textview_popularity = findViewById(R.id.popularity);
+        textview_overview = findViewById(R.id.overview);
+        textview_genres = findViewById(R.id.genres);
+        textview_production_companies = findViewById(R.id.production_companies);
 
         thumbnail = findViewById(R.id.thumbnail);
 

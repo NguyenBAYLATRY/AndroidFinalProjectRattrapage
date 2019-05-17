@@ -224,4 +224,17 @@ public class TVShowDetails {
         return res;
     }
 
+    public String getProductionCompaniesStringList(){
+        String res = "";
+        for (int i = 0; i < production_companies.size(); i++){
+            if (res.length()>0){
+                res += ", " + production_companies.get(i).getName();
+            }
+            else{
+                res += production_companies.get(i).getName();
+            }
+        }
+        return res;
+    }
+
 }
