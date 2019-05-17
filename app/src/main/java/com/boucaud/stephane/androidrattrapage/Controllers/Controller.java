@@ -2,6 +2,7 @@ package com.boucaud.stephane.androidrattrapage.Controllers;
 
 import com.boucaud.stephane.androidrattrapage.APIMovieDB.APIMovieDB;
 import com.boucaud.stephane.androidrattrapage.Models.GenresList;
+import com.boucaud.stephane.androidrattrapage.Models.Person;
 import com.boucaud.stephane.androidrattrapage.Models.TVShowDetails;
 import com.boucaud.stephane.androidrattrapage.Models.TVShowsList;
 import com.google.gson.Gson;
@@ -58,6 +59,11 @@ public class Controller implements ControllerInterface{
 
     public void queryTVShowDetails(int tv_id, String api_key, String language, Callback actions){
         Call<TVShowDetails> call = this.API.getTVShowDetails(tv_id, this.API_KEY, this.LANG);
+        call.enqueue(actions);
+    }
+
+    public void queryPersonDetails(int person_id, String api_key, String language, Callback actions){
+        Call<Person> call = this.API.getPersonDetails(person_id, this.API_KEY, this.LANG);
         call.enqueue(actions);
     }
 

@@ -1,6 +1,7 @@
 package com.boucaud.stephane.androidrattrapage.APIMovieDB;
 
 import com.boucaud.stephane.androidrattrapage.Models.GenresList;
+import com.boucaud.stephane.androidrattrapage.Models.Person;
 import com.boucaud.stephane.androidrattrapage.Models.TVShowDetails;
 import com.boucaud.stephane.androidrattrapage.Models.TVShowsList;
 
@@ -38,6 +39,12 @@ public interface APIMovieDB {
             @Query("language") String language
     );
 
+    @GET("person/{person_id}")
+    Call<Person> getPersonDetails(
+            @Path("person_id") int person_id,
+            @Query("api_key") String api_key,
+            @Query("language") String language
+    );
 
 
     /*
