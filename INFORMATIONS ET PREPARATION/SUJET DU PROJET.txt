@@ -12,17 +12,17 @@ When an actor is selected, a new page will be opened, with more details about
 the actor.
 
 Resume of the description:
-- Results of tv shows search in recycler view
-- on click on tv shows, show details in new activity
-- on click on actor, show details about actor in new activity
+V Results of tv shows search in recycler view
+V on click on tv shows, show details in new activity
+V on click on actor, show details about actor in new activity -> It is designed as "creator" in the API
 
 Create a new Android Project.
 V Import necessary libraries, such as a Network library and a Parsing library.
 V Add mandatory permissions to your app from AndroidManifest.xml.
 V Read Documentation from the Movie Database API.
 V Create an account to get an API key.
-- Implement a test request. (don’t forget to add your API key).
-- Create models to parse your data.
-- Create a RecyclerView.
-- Follow the exercise.
+V Implement a test request. (don’t forget to add your API key).
+V Create models to parse your data.
+V Create a RecyclerView.
+V Follow the exercise.
 
