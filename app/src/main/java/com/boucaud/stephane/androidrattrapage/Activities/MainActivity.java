@@ -8,7 +8,6 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import com.boucaud.stephane.androidrattrapage.R;
 
@@ -74,15 +73,12 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        /*
-
-            TO COMPLETE LATER
 
         // - Search button
         search_movies_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getBaseContext(), SearchActivity.class);
+                Intent intent = new Intent(getBaseContext(), SearchMoviesActivity.class);
                 intent.putExtra("default_api_key", api_key);
                 intent.putExtra("typed_api_key", actual_api_key);
                 startActivity(intent);
@@ -93,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
         last_visited_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getBaseContext(), VisitedActivity.class);
+                Intent intent = new Intent(getBaseContext(), VisitedMoviesActivity.class);
                 intent.putExtra("default_api_key", api_key);
                 intent.putExtra("typed_api_key", actual_api_key);
                 startActivity(intent);
@@ -104,13 +100,13 @@ public class MainActivity extends AppCompatActivity {
         trend_movies_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getBaseContext(), TrendsActivity.class);
+                Intent intent = new Intent(getBaseContext(), TrendsMoviesActivity.class);
                 intent.putExtra("default_api_key", api_key);
                 intent.putExtra("typed_api_key", actual_api_key);
                 startActivity(intent);
             }
         });
-        */
+
 
     }
 }

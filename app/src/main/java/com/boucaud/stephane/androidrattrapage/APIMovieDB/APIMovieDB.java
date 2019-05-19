@@ -1,6 +1,8 @@
 package com.boucaud.stephane.androidrattrapage.APIMovieDB;
 
 import com.boucaud.stephane.androidrattrapage.Models.GenresList;
+import com.boucaud.stephane.androidrattrapage.Models.MovieDetails;
+import com.boucaud.stephane.androidrattrapage.Models.MoviesList;
 import com.boucaud.stephane.androidrattrapage.Models.Person;
 import com.boucaud.stephane.androidrattrapage.Models.TVShowDetails;
 import com.boucaud.stephane.androidrattrapage.Models.TVShowsList;
@@ -46,10 +48,6 @@ public interface APIMovieDB {
             @Query("language") String language
     );
 
-
-    /*
-        TO COMPLETE LATER
-
     @GET("search/movie")
     Call<MoviesList> searchMovies(
             @Query("api_key") String api_key,
@@ -71,5 +69,4 @@ public interface APIMovieDB {
             @Path("period") String period,
             @Query("api_key") String api_key
     );
-    */
 }

@@ -2,6 +2,8 @@ package com.boucaud.stephane.androidrattrapage.Controllers;
 
 import com.boucaud.stephane.androidrattrapage.APIMovieDB.APIMovieDB;
 import com.boucaud.stephane.androidrattrapage.Models.GenresList;
+import com.boucaud.stephane.androidrattrapage.Models.MovieDetails;
+import com.boucaud.stephane.androidrattrapage.Models.MoviesList;
 import com.boucaud.stephane.androidrattrapage.Models.Person;
 import com.boucaud.stephane.androidrattrapage.Models.TVShowDetails;
 import com.boucaud.stephane.androidrattrapage.Models.TVShowsList;
@@ -67,9 +69,6 @@ public class Controller implements ControllerInterface{
         call.enqueue(actions);
     }
 
-    /*
-        TO COMPLETE LATER
-
     public void querySearchMovies(int page, boolean include_adult, String query, Callback actions){
         Call<MoviesList> call = this.API.searchMovies(this.API_KEY, this.LANG, page, include_adult, query);
         call.enqueue(actions);
@@ -84,8 +83,6 @@ public class Controller implements ControllerInterface{
         Call<MoviesList> call = this.API.getMovieTrends(period, this.API_KEY);
         call.enqueue(actions);
     }
-
-    */
 
 
     public String getAPI_KEY() {

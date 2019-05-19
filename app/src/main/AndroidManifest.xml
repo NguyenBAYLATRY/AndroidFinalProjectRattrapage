@@ -12,6 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Activities.TrendsMoviesActivity"></activity>
+        <activity android:name=".Activities.VisitedMoviesActivity" />
+        <activity android:name=".Activities.MovieDetailsActivity" />
+        <activity android:name=".Activities.SearchMoviesActivity" />
         <activity android:name=".Activities.CreatorDetailsActivity"></activity>
         <activity android:name=".Activities.TVDetailsActivity" />
         <activity android:name=".Activities.SearchTVActivity" />
