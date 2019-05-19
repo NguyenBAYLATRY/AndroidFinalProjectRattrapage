@@ -20,9 +20,11 @@ public class MainActivity extends AppCompatActivity {
     // View Objects
     private EditText typed_api_key;
     private Button search_movies_button;
-    private Button last_visited_button;
+    private Button last_visited_movies_button;
     private Button trend_movies_button;
     private Button search_tv_button;
+    private Button trend_tv_button;
+    private Button last_visited_tv_button;
 
     // Runtime parameters
     private String actual_api_key = "";
@@ -36,9 +38,11 @@ public class MainActivity extends AppCompatActivity {
         // Getting all objects from View
         typed_api_key = findViewById(R.id.typed_api_key);
         search_movies_button = findViewById(R.id.search_movies_button);
-        last_visited_button = findViewById(R.id.last_visited_button);
+        last_visited_movies_button = findViewById(R.id.last_visited_movies_button);
         trend_movies_button = findViewById(R.id.trend_movies_button);
         search_tv_button = findViewById(R.id.search_tv_button);
+        trend_tv_button = findViewById(R.id.trend_tv_button);
+        last_visited_tv_button = findViewById(R.id.last_visited_tv_button);
 
         // Initialising display data
 
@@ -86,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // - Last visited button
-        last_visited_button.setOnClickListener(new View.OnClickListener() {
+        last_visited_movies_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getBaseContext(), VisitedMoviesActivity.class);
