@@ -52,13 +52,13 @@ public class CreatorDetailsActivity extends AppCompatActivity {
                     Person person = response.body();
 
                     textview_name.setText(person.getName());
-                    textview_birthdate.setText(person.getBirthday());
-                    textview_place_of_birth.setText(person.getPlace_of_birth());
-                    textview_known_for_department.setText(person.getKnown_for_department());
-                    textview_also_known_as.setText(person.getAlso_known_as_String());
-                    textview_gender.setText(Integer.toString(person.getGender()));
-                    textview_biography.setText(person.getBiography());
-                    textview_popularity.setText(Float.toString(person.getPopularity()));
+                    textview_birthdate.setText("Birthday:\n"+person.getBirthday());
+                    textview_place_of_birth.setText("Place of birth:\n"+person.getPlace_of_birth());
+                    textview_known_for_department.setText("Known for department:\n"+person.getKnown_for_department());
+                    textview_also_known_as.setText("Also known as:\n"+person.getAlso_known_as_String());
+                    textview_gender.setText("Gender:\n"+Integer.toString(person.getGender()));
+                    textview_biography.setText("Biography:\n"+person.getBiography());
+                    textview_popularity.setText("Popularity:\n"+Float.toString(person.getPopularity()));
 
                     Glide.with(getApplicationContext()).load(person.getImageFullPath()).into(thumbnail);
 
