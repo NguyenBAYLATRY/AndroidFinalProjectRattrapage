@@ -84,6 +84,11 @@ public class Controller implements ControllerInterface{
         call.enqueue(actions);
     }
 
+    public void queryTVTrends(String period, Callback actions){
+        Call<TVShowsList> call = this.API.getTVTrends(period, this.API_KEY);
+        call.enqueue(actions);
+    }
+
 
     public String getAPI_KEY() {
         return API_KEY;

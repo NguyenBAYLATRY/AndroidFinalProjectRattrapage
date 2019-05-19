@@ -86,6 +86,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        trend_tv_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getBaseContext(), TrendsTVActivity.class);
+                intent.putExtra("default_api_key", api_key);
+                intent.putExtra("typed_api_key", actual_api_key);
+                startActivity(intent);
+            }
+        });
+
 
 
         // - Search button

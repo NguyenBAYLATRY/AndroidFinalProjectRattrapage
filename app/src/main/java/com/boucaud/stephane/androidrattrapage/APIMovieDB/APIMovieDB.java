@@ -69,4 +69,10 @@ public interface APIMovieDB {
             @Path("period") String period,
             @Query("api_key") String api_key
     );
+
+    @GET("trending/tv/{period}")
+    Call<TVShowsList> getTVTrends(
+            @Path("period") String period,
+            @Query("api_key") String api_key
+    );
 }
